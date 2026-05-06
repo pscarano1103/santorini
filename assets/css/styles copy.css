@@ -1,0 +1,190 @@
+@import url(fonts.css);
+/*Variables*/
+:root {
+  /*Color variables*/
+  --text: #ffffff;
+  --background: #181c1c;
+  --cianEletrico: #01f5d1;
+  --backgroundDestaque: #000000;
+  --verdePetronas: #00a19b;
+  --primaryGradient: linear-gradient(to right, #01f5d1 100%, #00a19b 100%);
+  --secondaryGradient: linear-gradient(to right, #00a19b 80%, #01f5d1 80%);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  --font-title: "Space Grotesk", sans-serif;
+  --font-text: "Inter", sans-serif;
+}
+
+/* Basic reset and layout */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-text);
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+/*Tipography*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 7.2rem);
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  background-image: url("/assets/images/heroHome.png");
+  background-size: cover;
+  background-position: center center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(27, 27, 27, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0;
+}
+
+/* Brand session */
+.brand-session {
+  padding: 40px 0;
+}
+.brand-session h2 {
+  font-family: Inter, sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+.brands-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+.track {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  padding: 10px 0;
+}
+.track img {
+  height: 48px;
+  width: auto;
+  opacity: 0.95;
+  filter: grayscale(0);
+  display: block;
+}
+
+/* Duplicate track container width handling for seamless loop */
+.track {
+  will-change: transform;
+}
+.track {
+  animation: scroll 20s linear infinite;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Footer placeholder */
+footer {
+  height: 80px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 16px 0;
+  }
+  .logo img {
+    height: 34px;
+  }
+  .hero {
+    min-height: 45vh;
+    padding: 24px 0;
+  }
+  .hero-content {
+    padding: 40px 0;
+  }
+  .track img {
+    height: 36px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+  .brand-session {
+    padding: 20px 0;
+  }
+  .brand-session h2 {
+    font-size: 11px;
+  }
+  .track img {
+    height: 32px;
+  }
+}
