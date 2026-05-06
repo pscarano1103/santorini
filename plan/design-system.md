@@ -7,11 +7,11 @@ Este é um site institucional para a Santorini Autocenter, negócio de mecanica 
 ## 2. Fundação
 
 - Pleta de cores:
-  --text: #000000;
-  --background: #ffffff;
-  --primary: #01f5d1;
-  --secondary: #c8ccce;
-  --accent: #00a19b;
+  --text: #ffffff;
+  --background: #181C1C;
+  --cianEletrico: #01f5d1;
+  --backgroundDestaque: #000000
+  --verdePetronas: #00a19b;
 
 - Tipografia para o css:
   @import url('https://fonts.googleapis.com/css?family=Akira%20Super:700|Creato%20Display:400');
