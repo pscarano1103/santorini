@@ -55,7 +55,7 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 7.2rem);
+  font-size: clamp(4.2rem, 6vw, 7.2rem);
 }
 
 h2 {
@@ -71,9 +71,15 @@ h4 {
 }
 
 .container {
+  width: 100%;
   max-width: 1280px;
+
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /*Buttons*/
@@ -89,6 +95,39 @@ h4 {
   transition: all ease 0.2s;
 
   &:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-primary,
+.btn-secondary {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  padding: 10px 50px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-image: var(--primaryGradient);
+  color: var(--text);
+  text-shadow: 0px 1px 4px #000000;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--text);
+  color: var(--background);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    transform: translateY(-2px);
   }
 }

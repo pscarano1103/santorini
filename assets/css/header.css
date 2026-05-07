@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px var(--spacing-xl);
+  padding: 17px var(--spacing-xl);
 }
 
 .logo img {

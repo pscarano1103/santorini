@@ -1,0 +1,48 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 81px);
+  background-size: cover;
+  background-position: center center;
+  background-image: url("/assets/images/heroHome.png");
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(27, 27, 27, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+
+  .heading span {
+    background: var(--primaryGradient);
+    -webkit-background-clip: text; /* Compatibilidade */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Torna o texto original transparente */
+    color: transparent; /* Fallback */
+    display: inline-block; /* Necessário para o gradiente funcionar corretamente */
+  }
+
+  .tag p {
+    font-weight: 300;
+    font-size: clamp(1.6rem, 2vw, 2rem);
+  }
+
+  .buttons {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+}
