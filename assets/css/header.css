@@ -63,6 +63,7 @@
     color: var(--text);
     font-size: 1.4rem;
     padding-right: 12px;
+    transition: all ease 0.3s;
 
     &:hover {
       color: var(--verdePetronas);

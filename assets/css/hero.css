@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 81px);
+  min-height: 100vh;
   background-size: cover;
   background-position: center center;
   background-image: url("/assets/images/heroHome.png");

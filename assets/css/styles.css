@@ -7,8 +7,8 @@
   --cianEletrico: #01f5d1;
   --backgroundDestaque: #000000;
   --verdePetronas: #00a19b;
-  --primaryGradient: linear-gradient(to right, #01f5d1 100%, #00a19b 100%);
-  --secondaryGradient: linear-gradient(to left, #00a19b 80%, #01f5d1 80%);
+  --primaryGradient: linear-gradient(to right, #01f5d1, #00a19b);
+  --secondaryGradient: linear-gradient(to right, #00a19b, #01f5d1);
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -90,12 +90,13 @@ h4 {
   padding: 10px 50px;
   color: var(--text);
   text-decoration: none;
-  text-shadow: 0px 1px 4px #000000;
+
   background-image: var(--primaryGradient);
-  transition: all ease 0.2s;
+  transition: all ease 0.5s;
 
   &:hover {
     transform: translateY(-2px);
+    background-image: var(--secondaryGradient);
   }
 }
 
@@ -108,16 +109,16 @@ h4 {
   text-decoration: none;
   font-weight: 600;
 
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .btn-primary {
   background-image: var(--primaryGradient);
   color: var(--text);
-  text-shadow: 0px 1px 4px #000000;
 
   &:hover {
     transform: translateY(-2px);
+    background-image: var(--secondaryGradient);
   }
 }
 
@@ -126,7 +127,7 @@ h4 {
   color: var(--background);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     color: var(--text);
     transform: translateY(-2px);
   }
