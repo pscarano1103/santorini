@@ -41,6 +41,10 @@ body {
   line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*Tipography*/
 
 h1,
@@ -67,7 +71,7 @@ h3 {
 }
 
 h4 {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.6rem);
 }
 
 .container {
