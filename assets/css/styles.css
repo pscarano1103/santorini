@@ -74,6 +74,10 @@ h4 {
   font-size: clamp(1rem, 2vw, 1.6rem);
 }
 
+h5 {
+  font-size: clamp(0.8rem, 1vw, 1.4rem);
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
