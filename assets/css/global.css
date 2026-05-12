@@ -1,0 +1,149 @@
+@import url(/assets/css/components/header.css);
+@import url(/assets/css/components/fonts.css);
+@import url(/assets/css/components/hero.css);
+@import url(/assets/css/components/branchSection.css);
+@import url(/assets/css/components/quickService.css);
+@import url(/assets/css/components/testimonials.css);
+@import url(/assets/css/components/footer.css);
+
+/*Variables*/
+:root {
+  /*Color variables*/
+  --text: #ffffff;
+  --background: #181c1c;
+  --cianEletrico: #01f5d1;
+  --backgroundDestaque: #000000;
+  --verdePetronas: #00a19b;
+  --primaryGradient: linear-gradient(to right, #01f5d1, #00a19b);
+  --secondaryGradient: linear-gradient(to right, #00a19b, #01f5d1);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  --font-title: "Space Grotesk", sans-serif;
+  --font-text: "Inter", sans-serif;
+}
+
+/* Basic reset and layout */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-text);
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Tipography*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(4.2rem, 6vw, 7.2rem);
+}
+
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 2vw, 1.6rem);
+}
+
+h5 {
+  font-size: clamp(0.8rem, 1vw, 1.4rem);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*Buttons*/
+
+.btn-menu {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  padding: 10px 50px;
+  color: var(--text);
+  text-decoration: none;
+
+  background-image: var(--primaryGradient);
+  transition: all ease 0.5s;
+
+  &:hover {
+    transform: translateY(-2px);
+    background-image: var(--secondaryGradient);
+  }
+}
+
+.btn-primary,
+.btn-secondary {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  padding: 10px 50px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all 0.5s ease;
+}
+
+.btn-primary {
+  background-image: var(--primaryGradient);
+  color: var(--text);
+
+  &:hover {
+    transform: translateY(-2px);
+    background-image: var(--secondaryGradient);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--text);
+  color: var(--background);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text);
+    transform: translateY(-2px);
+  }
+}
