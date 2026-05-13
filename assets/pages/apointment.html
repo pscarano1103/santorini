@@ -53,6 +53,84 @@
 
         <div class="hero-overlay"></div>
       </section>
+
+      <section class="form container">
+        <form action="">
+          <label for="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            class="field"
+            placeholder="Enter your name here"
+          />
+          <label for="vehicle">Vehicle Registration</label>
+          <input
+            type="text"
+            id="vehicle"
+            class="field"
+            placeholder="e.g. AA-00-AA"
+          />
+          <label for="listServices">Service</label>
+          <select name="Services" id="listServices" class="field">
+            <option value="BW">Bodywork</option>
+            <option value="AD">Automotive Detailing</option>
+            <option value="P">Paintwork</option>
+            <option value="SR">Smart Repairs</option>
+            <option value="MS">Mechanical Services</option>
+            <option value="FVC">Full Vehicle Check-Up</option>
+            <option value="AES">Auto Electrical Services</option>
+            <option value="ED">Electronic Diagnostics</option>
+            <option value="SS">Suspension Services</option>
+            <option value="BS">Brake Services</option>
+            <option value="OFS">Oil and Filter Service</option>
+            <option value="VS">Vehicle Servicing</option>
+          </select>
+
+          <label for="description">Description</label>
+          <textarea
+            row="8"
+            id="description"
+            name="description"
+            class="field"
+            placeholder="Brief description of what you need"
+          ></textarea>
+          <button class="btn-form" type="button" onclick="sendWhatsapp()">
+            Request a quote
+          </button>
+        </form>
+
+        <div class="side-area">
+          <div class="times-work">
+            <div class="times-title">
+              <img src="../images/icons/time.svg" alt="" />
+              <p>Opening Hours</p>
+            </div>
+            <div class="times-content--box">
+              <p class="times-day">Monday – Friday</p>
+              <p class="times-hour"><strong>08:00 - 19:00</strong></p>
+            </div>
+            <div class="times-content--box">
+              <p class="times-day">Saturday</p>
+              <p class="times-hour"><strong>08:00 - 13:00</strong></p>
+            </div>
+            <div class="times-content--box">
+              <p class="times-day">Sunday</p>
+              <p class="times-hour"><strong>Closed</strong></p>
+            </div>
+          </div>
+          <div class="map-box">
+            <div class="map-info">
+              <img src="../images/icons/point.svg" alt="" />
+              <div class="map-info--content">
+                <p class="map-info--title">Location</p>
+                <p class="map-info--text">
+                  41, Casal do Cego, Marrazes, Leiria
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>

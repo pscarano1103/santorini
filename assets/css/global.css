@@ -5,7 +5,7 @@
 @import url(/assets/css/components/quickService.css);
 @import url(/assets/css/components/testimonials.css);
 @import url(/assets/css/components/footer.css);
-@import url(/assets/css/components/gridServices.css);
+@import url(/assets/css/components/Services.css);
 
 /*Variables*/
 :root {
@@ -41,6 +41,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  font-weight: 400;
 }
 
 body {
