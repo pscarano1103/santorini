@@ -75,6 +75,47 @@
   .carousel-track {
     gap: 60px;
   }
+
+  .quickService .container {
+    padding: 40px var(--spacing-lg);
+  }
+
+  .quickService-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .content-tag {
+    max-width: 100%;
+    font-size: 1.6rem;
+  }
+
+  .content-link {
+    align-self: flex-start;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: var(--spacing-md);
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 250px;
+  }
+
+  .card-content {
+    padding: 20px;
+
+    .card-description {
+      font-size: 1.4rem;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -85,6 +126,63 @@
 
   .carousel-track {
     gap: 40px;
+  }
+
+  .carousel-branch h2 {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    letter-spacing: 2px;
+  }
+
+  .quickService .container {
+    padding: 30px var(--spacing-md);
+  }
+
+  .quickService-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .content-tag {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .content-link a {
+    font-size: 1.4rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 200px;
+  }
+
+  .card-content {
+    padding: 16px;
+
+    .card-description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-height: none;
+    }
+
+    .card-title {
+      font-size: 1.6rem !important;
+    }
+  }
+
+  .testmonials {
+    padding: 20px 0;
   }
 }
 

@@ -74,3 +74,108 @@
     }
   }
 }
+
+/* Responsive Services */
+
+@media (max-width: 768px) {
+  .grid-services {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--spacing-md);
+    column-gap: var(--spacing-md);
+  }
+
+  .grid-card {
+    min-height: 320px;
+    padding: var(--spacing-lg);
+
+    .content {
+      gap: var(--spacing-sm);
+
+      .content--title {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      .content--desc {
+        font-size: 1.2rem;
+      }
+    }
+
+    .card-btn {
+      font-size: 1rem;
+    }
+  }
+
+  .list-services {
+    padding: 40px 0;
+  }
+
+  .cta {
+    padding: 30px var(--spacing-lg);
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: 40px;
+
+    .cta-content {
+      gap: 1.2rem;
+
+      .cta-content--text {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-services {
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-sm);
+    column-gap: var(--spacing-sm);
+  }
+
+  .grid-card {
+    min-height: 280px;
+    padding: var(--spacing-md);
+    border: 1px solid var(--verdePetronas);
+
+    .content {
+      gap: var(--spacing-sm);
+
+      .content--title {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      .content--desc {
+        font-size: 1.1rem;
+        color: var(--prataSelenita);
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .card-btn {
+      font-size: 0.9rem;
+      padding: 10px 0;
+    }
+  }
+
+  .list-services {
+    padding: 20px 0;
+  }
+
+  .cta {
+    padding: 20px var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: 20px;
+
+    .cta-content {
+      gap: 1rem;
+
+      .cta-content--text {
+        max-width: 100%;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
