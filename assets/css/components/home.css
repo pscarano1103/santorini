@@ -1,3 +1,95 @@
+.carousel-branch {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.carousel-branch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.carousel-branch h2 {
+  text-align: center;
+  letter-spacing: 3.6px;
+  font-family: var(--font-text);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--background);
+  padding: 30px 15px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 100px;
+  animation: scroll 50s linear infinite;
+  width: fit-content;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  max-width: 50px;
+  max-height: auto;
+  object-fit: contain;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.carousel-item img:hover {
+  filter: brightness(1);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 50px));
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-branch {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .carousel-item {
+    min-width: 150px;
+    height: 100px;
+  }
+
+  .carousel-track {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    min-width: 120px;
+    height: 80px;
+  }
+
+  .carousel-track {
+    gap: 40px;
+  }
+}
+
+/*QuickService section*/
+
 .quickService {
   color: var(--text);
   background-color: var(--backgroundDestaque);
@@ -45,7 +137,7 @@
   font-weight: 700;
 }
 
-/*construção do grid*/
+/*QuickService--construção do grid*/
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -70,7 +162,7 @@
   }
 }
 
-/* Espicificação de cards*/
+/* QuickService--Espicificação de cards*/
 .card1,
 .card2,
 .card3,
@@ -116,4 +208,9 @@
   grid-row: 2/3;
   grid-column: 2/4;
   background-image: url(/assets/images/cardPintura.jpg);
+}
+
+/*testmonials Section*/
+.testmonials {
+  padding: 40px 0;
 }

@@ -1,3 +1,9 @@
+/*Hero Especifica*/
+
+.hero {
+  background-image: url("/assets/images/heroService.jpg");
+}
+
 .list-services {
   padding: 60px 0;
 }
