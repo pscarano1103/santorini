@@ -3,64 +3,91 @@
   background-image: url("/assets/images/heroApointment.jpg");
 }
 
-/*Form*/
+/*Form - Mobile First*/
 
 .form {
   display: flex;
-  gap: var(--spacing-2xl);
-  padding: 60px 0;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(2rem, 5vw, 3.75rem) clamp(2rem, 5vw, 3.75rem);
+  align-items: stretch;
 }
 
 form {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-2xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
   background-color: var(--backgroundDestaque);
+  border-radius: 0.25rem;
 
   label {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     text-transform: uppercase;
     color: var(--cianEletrico);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: clamp(0.5rem, 1vw, 0.5rem);
     font-weight: 700;
-    line-height: 1.5rem;
-    letter-spacing: 1px;
+    line-height: 1.5;
+    letter-spacing: clamp(0.5px, 0.8vw, 1px);
   }
+
   .field {
-    font-size: 1.4rem;
-    margin-bottom: var(--spacing-xl);
-    padding: 1.8rem 1.6rem;
+    font-size: clamp(0.95rem, 1.3vw, 1.4rem);
+    margin-bottom: clamp(1.25rem, 2vw, 1.5rem);
+    padding: clamp(1rem, 2vw, 1.125rem) clamp(0.75rem, 1.5vw, 1rem);
     background-color: var(--background);
-    border: 0;
+    border: 1px solid rgba(1, 245, 209, 0.2);
+    border-radius: 0.25rem;
     color: var(--text);
+    font-family: var(--font-text);
+    min-height: var(--min-touch-target);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--cianEletrico);
+      box-shadow: 0 0 0 3px rgba(1, 245, 209, 0.1);
+    }
 
     &::placeholder {
       font-family: var(--font-text);
-      font-size: 1.4rem;
+      font-size: clamp(0.9rem, 1.2vw, 1.4rem);
       color: #cccccc;
-      letter-spacing: 1.2px;
+      letter-spacing: clamp(0.5px, 0.8vw, 1.2px);
     }
   }
 
   textarea {
     width: 100%;
-    height: 115px;
-    resize: none;
+    height: clamp(80px, 20vw, 115px);
+    resize: vertical;
   }
 
   .btn-form {
     font-family: var(--font-title);
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1.5vw, 1.6rem);
     font-weight: 700;
-    line-height: var(--spacing-lg);
-    letter-spacing: 1.6px;
-    padding: 20px 0;
+    line-height: 1.5;
+    letter-spacing: clamp(0.8px, 1vw, 1.6px);
+    padding: clamp(1rem, 2vw, 1.25rem) var(--spacing-md);
     text-transform: uppercase;
     color: var(--text);
     background-color: var(--verdePetronas);
     cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    min-height: var(--min-touch-target);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 161, 155, 0.8);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--cianEletrico);
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -71,28 +98,29 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--spacing-2xl);
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .times-work {
   width: 100%;
   background-color: var(--backgroundDestaque);
-  padding: var(--spacing-xl);
+  padding: clamp(1.5rem, 2vw, 2rem);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: clamp(1rem, 1.5vw, 1rem);
+  border-radius: 0.25rem;
 
   .times-title {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
     font-family: var(--font-title);
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: clamp(1.4rem, 2vw, 2.4rem);
+    line-height: 1.5;
     font-weight: 700;
 
     img {
-      width: 20px;
+      width: clamp(16px, 3vw, 20px);
       height: auto;
     }
   }
@@ -100,11 +128,13 @@ form {
   .times-content--box {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
 
     .times-day,
     .times-hour {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      font-size: clamp(0.9rem, 1.3vw, 1.6rem);
+      line-height: 1.6;
       color: #cccccc;
     }
   }
@@ -114,220 +144,227 @@ form {
 .map-box {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .map-info {
   display: flex;
-  gap: var(--spacing-md);
-  align-items: center;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
 
   img {
     background-color: var(--verdePetronas);
-    padding: 10px;
+    padding: clamp(6px, 1.5vw, 10px);
+    width: clamp(18px, 3vw, 24px);
   }
 
   .map-info--title {
     font-family: var(--font-title);
-    font-size: 1.8rem;
-    line-height: 2.8rem;
+    font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+    line-height: 1.6;
     text-transform: uppercase;
     font-weight: 700;
   }
 
   .map-info--text {
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.4rem);
     color: #cccccc;
+    line-height: 1.6;
   }
+}
+
+.map-info--content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0.5rem, 0.5vw, 0rem);
 }
 
 .map-container iframe {
   width: 100%;
-  height: 280px;
+  height: clamp(200px, 40vw, 280px);
+  border: none;
+  border-radius: 0.25rem;
 }
 
-/* Responsive Appointment */
-
-@media (max-width: 768px) {
+/* Tablet (768px+) */
+@media (min-width: 48rem) {
   .form {
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    padding: 40px 0;
-    align-items: stretch;
+    flex-direction: row;
+    gap: clamp(1.75rem, 3vw, 2rem);
+    padding: clamp(2.5rem, 4vw, 3.75rem) clamp(2.5rem, 4vw, 3.75rem);
+    align-items: flex-start;
+
+    > * {
+      flex: 1;
+    }
   }
 
   form {
-    flex: 1;
-    padding: var(--spacing-lg);
+    flex: 2;
+    padding: clamp(1.75rem, 2vw, 2rem);
 
     label {
-      font-size: 0.9rem;
+      font-size: clamp(0.9rem, 1vw, 0.9rem);
       margin-bottom: var(--spacing-sm);
     }
 
     .field {
-      font-size: 1.2rem;
-      margin-bottom: var(--spacing-lg);
-      padding: 1.4rem 1.2rem;
+      font-size: clamp(1rem, 1.1vw, 1.2rem);
+      margin-bottom: clamp(1.25rem, 1.5vw, 1.5rem);
+      padding: clamp(1rem, 1.5vw, 1.125rem) clamp(0.85rem, 1.3vw, 1rem);
 
       &::placeholder {
-        font-size: 1.2rem;
+        font-size: clamp(0.95rem, 1vw, 1.2rem);
       }
     }
 
     textarea {
-      height: 100px;
+      min-height: clamp(100px, 15vw, 100px);
     }
 
     .btn-form {
-      font-size: 1.4rem;
-      padding: 16px 0;
+      font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+      padding: clamp(1rem, 1.5vw, 1rem);
     }
   }
 
   .side-area {
     flex: 1;
-    gap: var(--spacing-lg);
+    gap: clamp(1.5rem, 2vw, 1.75rem);
   }
 
   .times-work {
-    padding: var(--spacing-lg);
+    padding: clamp(1.5rem, 1.8vw, 1.5rem);
+    gap: clamp(0.75rem, 1.2vw, 1rem);
 
     .times-title {
-      font-size: 1.8rem;
-      line-height: 2.4rem;
+      font-size: clamp(1.6rem, 1.8vw, 1.8rem);
     }
 
     .times-content--box {
       .times-day,
       .times-hour {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        font-size: clamp(1rem, 1.1vw, 1.4rem);
       }
     }
   }
 
   .map-box {
-    flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: clamp(1rem, 1.5vw, 1.25rem);
   }
 
   .map-info {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: var(--spacing-md);
 
     img {
-      width: 24px;
+      width: clamp(20px, 2.5vw, 24px);
+      padding: clamp(6px, 1vw, 10px);
+      flex-shrink: 0;
+      margin-top: 2px;
     }
-
     .map-info--title {
-      font-size: 1.6rem;
-      line-height: 2.2rem;
+      font-size: clamp(1.4rem, 1.6vw, 1.6rem);
     }
 
     .map-info--text {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 1.1vw, 1.2rem);
     }
   }
 
   .map-container iframe {
-    height: 300px;
+    height: clamp(250px, 35vw, 300px);
   }
 }
 
-@media (max-width: 480px) {
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
   .form {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: 20px 0;
-    align-items: stretch;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 3.75rem 0;
+    align-items: flex-start;
   }
 
   form {
-    flex: 1;
-    padding: var(--spacing-md);
+    flex: 2;
+    padding: 2rem;
 
     label {
-      font-size: 0.85rem;
-      margin-bottom: 6px;
-      letter-spacing: 0.5px;
+      font-size: 1rem;
     }
 
     .field {
-      font-size: 1.1rem;
-      margin-bottom: var(--spacing-lg);
-      padding: 1.2rem 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      padding: 1.125rem 1rem;
 
       &::placeholder {
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
+        font-size: 1.4rem;
       }
     }
 
     textarea {
-      height: 80px;
+      min-height: 115px;
     }
 
     .btn-form {
-      font-size: 1.2rem;
-      padding: 12px 0;
-      letter-spacing: 0.8px;
+      font-size: 1.6rem;
+      padding: 1.25rem;
     }
   }
 
   .side-area {
     flex: 1;
-    gap: var(--spacing-md);
+    gap: 2rem;
   }
 
   .times-work {
-    padding: var(--spacing-lg);
-    gap: var(--spacing-sm);
+    padding: 2rem;
+    gap: 1rem;
 
     .times-title {
-      font-size: 1.4rem;
-      line-height: 2rem;
-      gap: 6px;
+      font-size: 2.4rem;
 
       img {
-        width: 16px;
+        width: 20px;
       }
     }
 
     .times-content--box {
-      flex-direction: column;
-      gap: 4px;
-
       .times-day,
       .times-hour {
-        font-size: 1.1rem;
-        line-height: 1.6rem;
+        font-size: 1.6rem;
       }
     }
   }
 
   .map-box {
-    flex-direction: column;
-    gap: var(--spacing-md);
+    gap: 1.5rem;
   }
 
   .map-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
+    gap: 1rem;
+    align-items: center;
 
     img {
-      width: 20px;
+      width: 40px;
+      padding: 10px;
     }
 
+    .map-info--content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
     .map-info--title {
-      font-size: 1.4rem;
-      line-height: 2rem;
+      font-size: 1.8rem;
     }
 
     .map-info--text {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
     }
   }
 

@@ -14,15 +14,38 @@
   --primaryGradient: linear-gradient(to right, #01f5d1, #00a19b);
   --secondaryGradient: linear-gradient(to right, #00a19b, #01f5d1);
 
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
+  /* Responsive Spacing - Mobile First */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
 
   --font-title: "Space Grotesk", sans-serif;
   --font-text: "Inter", sans-serif;
+
+  /* Accessibility */
+  --min-touch-target: 2rem; /* 44px */
+  --focus-color: var(--cianEletrico);
+}
+
+/* Tablet breakpoints */
+@media (min-width: 48rem) {
+  :root {
+    --spacing-lg: 1.75rem;
+    --spacing-xl: 2.5rem;
+    --spacing-2xl: 3.5rem;
+  }
+}
+
+/* Desktop breakpoints */
+@media (min-width: 64rem) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+  }
 }
 
 /* Basic reset and layout */
@@ -36,7 +59,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  font-weight: 400l;
+  font-weight: 400;
 }
 
 body {
@@ -48,9 +71,14 @@ body {
 
 a {
   text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+  }
 }
 
-/*Tipography*/
+/* Tipography - Mobile First with Responsive Scaling */
 
 h1,
 h2,
@@ -63,26 +91,31 @@ h6 {
   line-height: 1.2;
 }
 
+/* Mobile First (320px+) */
 h1 {
-  font-size: clamp(4.2rem, 6vw, 7.2rem);
+  font-size: clamp(1.8rem, 6vw, 7.2rem);
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-size: clamp(1.4rem, 5vw, 4.8rem);
+  line-height: 1.15;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1.2rem, 3.5vw, 3rem);
+  line-height: 1.2;
 }
 
 h4 {
-  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
 }
 
 h5 {
-  font-size: clamp(0.8rem, 1vw, 1.4rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
 }
 
+/* Container - Responsive with fluid max-width */
 .container {
   width: 100%;
   max-width: 1280px;
@@ -93,41 +126,62 @@ h5 {
   align-items: center;
 }
 
-/*Buttons*/
-
-.btn-menu {
-  font-family: var(--font-text);
-  font-size: 1.6rem;
-  padding: 10px 50px;
-  color: var(--text);
-  text-decoration: none;
-
-  background-image: var(--primaryGradient);
-  transition: all ease 0.5s;
-
-  &:hover {
-    transform: translateY(-2px);
-    background-image: var(--secondaryGradient);
+/* Tablet (768px+) */
+@media (min-width: 48rem) {
+  .container {
+    padding: 0 var(--spacing-lg);
   }
 }
 
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/*Buttons - Accessible with min 44x44px touch target*/
+
+.btn-menu,
 .btn-primary,
 .btn-secondary {
   font-family: var(--font-text);
-  font-size: 1.6rem;
-  padding: 10px 50px;
-
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 5vw, 3.125rem);
+  min-height: var(--min-touch-target);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
 
-  transition: all 0.5s ease;
+  &:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+  }
+}
+
+.btn-menu {
+  background-image: var(--primaryGradient);
+  color: var(--text);
+
+  &:hover,
+  &:active {
+    transform: translateY(-2px);
+    background-image: var(--secondaryGradient);
+  }
 }
 
 .btn-primary {
   background-image: var(--primaryGradient);
   color: var(--text);
 
-  &:hover {
+  &:hover,
+  &:active {
     transform: translateY(-2px);
     background-image: var(--secondaryGradient);
   }
@@ -137,32 +191,35 @@ h5 {
   background-color: var(--text);
   color: var(--background);
 
-  &:hover {
+  &:hover,
+  &:active {
     background: rgba(255, 255, 255, 0.2);
     color: var(--text);
     transform: translateY(-2px);
   }
 }
 
-/*Hero Section*/
+/*Hero Section - Mobile First*/
 
 .hero {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 50vh;
   background-size: cover;
   background-position: center center;
   background-image: url("/assets/images/heroHome.png");
+  background-attachment: scroll;
 }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.95) 0%,
-    rgba(27, 27, 27, 0.8) 50%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(27, 27, 27, 0.75) 50%,
+    rgba(0, 0, 0, 0.5) 100%
   );
   pointer-events: none;
 }
@@ -170,143 +227,90 @@ h5 {
 .hero-content {
   z-index: 1;
   width: 100%;
-  max-width: 760px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: clamp(1rem, 4vw, 1.5rem);
+  padding: 0 var(--spacing-md);
 
   .heading span {
     background: var(--primaryGradient);
-    -webkit-background-clip: text; /* Compatibilidade */
+    -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent; /* Torna o texto original transparente */
-    color: transparent; /* Fallback */
-    display: inline-block; /* Necessário para o gradiente funcionar corretamente */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline-block;
   }
 
   .tag p {
     font-weight: 300;
-    font-size: clamp(1.6rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    line-height: 1.5;
   }
 
   .buttons {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-top: clamp(0.5rem, 2vw, 1rem);
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
-/* Responsive Styles */
-
-/* Tablet (768px and below) */
-@media (max-width: 768px) {
-  :root {
-    --spacing-xl: 24px;
-    --spacing-2xl: 32px;
-  }
-
-  html {
-    font-size: 56.25%; /* 9px base */
-  }
-
-  .container {
-    padding: 0 var(--spacing-lg);
-  }
-
-  h1 {
-    font-size: clamp(2.8rem, 5vw, 4.8rem);
-  }
-
-  h2 {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-  }
-
-  .btn-menu,
-  .btn-primary,
-  .btn-secondary {
-    font-size: 1.4rem;
-    padding: 8px 32px;
-  }
-
+/* Tablet (768px+) */
+@media (min-width: 48rem) {
   .hero {
     min-height: 60vh;
-  }
-
-  .hero-content {
-    max-width: 100%;
+    background-attachment: fixed;
   }
 
   .hero-overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.98) 0%,
-      rgba(27, 27, 27, 0.9) 50%,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(27, 27, 27, 0.85) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .hero-content {
+    max-width: 600px;
+    gap: clamp(1.25rem, 3vw, 1.5rem);
+    padding: 0;
+
+    .buttons {
+      flex-direction: row;
+      gap: clamp(1rem, 2vw, 1rem);
+
+      a {
+        width: auto;
+      }
+    }
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(27, 27, 27, 0.8) 50%,
       rgba(0, 0, 0, 0) 100%
     );
   }
-}
-
-/* Mobile (480px and below) */
-@media (max-width: 480px) {
-  :root {
-    --spacing-lg: 16px;
-    --spacing-xl: 20px;
-    --spacing-2xl: 24px;
-  }
-
-  html {
-    font-size: 50%; /* 8px base */
-  }
-
-  .container {
-    padding: 0 var(--spacing-md);
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-  }
-
-  h2 {
-    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
-  }
-
-  h3 {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  }
-
-  .btn-menu,
-  .btn-primary,
-  .btn-secondary {
-    font-size: 1.2rem;
-    padding: 8px 20px;
-  }
-
-  .hero {
-    min-height: 50vh;
-    background-position: center;
-  }
 
   .hero-content {
-    max-width: 100%;
-    gap: var(--spacing-md);
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.99) 0%,
-      rgba(0, 0, 0, 0.9) 50%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
-  }
-
-  .hero-content .buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-content .buttons a {
-    width: 100%;
-    text-align: center;
+    max-width: 760px;
+    gap: 1.5rem;
   }
 }

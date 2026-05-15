@@ -1,11 +1,11 @@
 footer {
   background-color: var(--verdePetronas);
-  padding: var(--spacing-2xl) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0;
 
   .container {
     width: 100%;
     flex-direction: column;
-    gap: var(--spacing-2xl);
+    gap: clamp(1.5rem, 4vw, 3rem);
   }
 }
 
@@ -13,22 +13,24 @@ footer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-2xl);
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .tag-footer {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: clamp(1rem, 2vw, 1.5rem);
 
   .logo {
-    width: 150px;
+    width: clamp(80px, 15vw, 150px);
     height: auto;
+    transition: width 0.3s ease;
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+    line-height: 1.6;
   }
 }
 
@@ -42,8 +44,9 @@ footer {
 .navigation h5,
 .location h5 {
   text-transform: uppercase;
-  line-height: 2rem;
-  letter-spacing: 1.4px;
+  line-height: 1.8;
+  letter-spacing: clamp(0.5px, 1vw, 1.4px);
+  font-size: clamp(0.9rem, 1.3vw, 1.4rem);
 }
 
 .navigation ul {
@@ -52,50 +55,76 @@ footer {
 
 .navigation ul li a {
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: clamp(0.85rem, 1.2vw, 1.4rem);
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--min-touch-target);
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+    outline-offset: 2px;
+  }
 }
 
 .content-location {
-  font-size: 1.4rem;
+  font-size: clamp(0.85rem, 1.2vw, 1.4rem);
+  line-height: 1.8;
 }
 
 .copy {
   width: 100%;
-  padding-top: var(--spacing-xl);
-  border-top: 1px solid #e5e5e5;
+  padding-top: clamp(1rem, 2vw, 2rem);
+  border-top: 1px solid var(--text);
   text-align: center;
-  font-size: 1.4rem;
+  font-size: clamp(0.8rem, 1vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 
   a {
     color: var(--text);
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.3);
+      outline-offset: 2px;
+    }
   }
 }
 
-/* Responsive Footer */
-
-@media (max-width: 768px) {
+/* Tablet (768px+) */
+@media (min-width: 48rem) {
   footer {
-    padding: var(--spacing-xl) 0;
+    padding: clamp(2rem, 3vw, 2.5rem) 0;
 
     .container {
-      gap: var(--spacing-lg);
+      gap: clamp(1.75rem, 3vw, 2.5rem);
     }
   }
 
   .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
   }
 
   .tag-footer {
-    gap: 16px;
+    gap: clamp(1rem, 2vw, 1.5rem);
 
     .logo {
-      width: 120px;
+      width: clamp(100px, 12vw, 150px);
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
     }
   }
 
@@ -106,77 +135,70 @@ footer {
 
   .navigation h5,
   .location h5 {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    letter-spacing: 1px;
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+    line-height: 1.6;
+    letter-spacing: clamp(0.5px, 0.8vw, 1px);
   }
 
   .navigation ul li a,
   .content-location {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
   }
 
   .copy {
-    padding-top: var(--spacing-lg);
-    font-size: 1.2rem;
+    padding-top: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.85rem, 0.9vw, 1.2rem);
   }
 }
 
-@media (max-width: 480px) {
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
   footer {
-    padding: var(--spacing-lg) 0;
+    padding: 3rem 0;
 
     .container {
-      gap: var(--spacing-lg);
-      padding: 0 var(--spacing-md);
+      gap: 3rem;
     }
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
   .tag-footer {
-    gap: 12px;
+    gap: 1.5rem;
 
     .logo {
-      width: 100px;
+      width: 150px;
     }
 
     p {
-      font-size: 1.1rem;
-      line-height: 1.6rem;
+      width: 370px;
+      font-size: 1.4rem;
     }
   }
 
   .navigation,
   .location {
-    gap: var(--spacing-sm);
+    gap: 1rem;
   }
 
   .navigation h5,
   .location h5 {
-    font-size: 1.1rem;
-    line-height: 1.6rem;
-    letter-spacing: 0.7px;
     text-transform: uppercase;
-  }
-
-  .navigation ul {
-    list-style: none;
+    line-height: 2rem;
+    letter-spacing: 1.4px;
   }
 
   .navigation ul li a,
   .content-location {
-    font-size: 1rem;
-    line-height: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .copy {
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 1rem;
-    margin-top: var(--spacing-lg);
+    padding-top: 2rem;
+    border-top: 1px solid var(--text);
+    font-size: 1.4rem;
   }
 }

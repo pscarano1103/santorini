@@ -5,119 +5,160 @@
 }
 
 .list-services {
-  padding: 60px 0;
+  padding: clamp(2rem, 5vw, 3.75rem) 0;
 }
 
+/* Service Grid - Mobile First */
 .grid-services {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: var(--spacing-lg);
-  column-gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .grid-card {
-  min-height: 415px;
+  min-height: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #525252;
-  padding: var(--spacing-xl);
+  padding: clamp(1.25rem, 3vw, 2rem);
   border: 1px solid var(--verdePetronas);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(1, 245, 209, 0.1);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cianEletrico);
+    outline-offset: 2px;
+  }
 
   .content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+    margin-bottom: var(--spacing-md);
 
     .content--title {
-      font-size: 2rem;
-      line-height: 2.8rem;
+      font-size: clamp(1.1rem, 2vw, 2rem);
+      line-height: 1.4;
     }
 
     .content--desc {
-      font-size: 1.4rem;
-      padding-bottom: 1rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.4rem);
+      line-height: 1.6;
       color: var(--prataSelenita);
     }
   }
 
   .card-btn {
     font-family: var(--font-title);
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    font-size: clamp(0.85rem, 1.2vw, 1.2rem);
     font-weight: 600;
-    line-height: var(--spacing-md);
-    letter-spacing: 1.2px;
+    line-height: 1.5;
+    letter-spacing: clamp(0.8px, 1vw, 1.2px);
     background-color: var(--verdePetronas);
     color: var(--text);
     text-align: center;
-    padding: 12px 0;
+    padding: clamp(0.75rem, 2vw, 1rem) var(--spacing-md);
     text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--min-touch-target);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: rgba(0, 161, 155, 0.8);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.3);
+      outline-offset: 2px;
+    }
   }
 }
 
+/* CTA Section - Responsive */
 .cta {
-  padding: 50px 64px;
+  padding: clamp(1.5rem, 4vw, 3.125rem) var(--spacing-md);
   background-color: var(--backgroundDestaque);
   display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
   justify-content: space-between;
-  margin-bottom: 80px;
+  margin-bottom: clamp(1.5rem, 5vw, 5rem);
+  align-items: center;
+  border-radius: 0.25rem;
 
   .cta-content {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    width: 100%;
+    text-align: center;
+
+    .cta-content--title {
+      font-size: clamp(1.4rem, 4vw, 3.2rem);
+    }
 
     .cta-content--text {
-      max-width: 450px;
+      max-width: 100%;
       font-size: clamp(1rem, 2vw, 1.6rem);
+      line-height: 1.6;
     }
   }
 }
 
-/* Responsive Services */
+/* Tablet (768px+) */
+@media (min-width: 48rem) {
+  .list-services {
+    padding: clamp(2.5rem, 4vw, 3.75rem) 0;
+  }
 
-@media (max-width: 768px) {
   .grid-services {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: var(--spacing-md);
-    column-gap: var(--spacing-md);
+    gap: clamp(1.25rem, 2vw, 1.5rem);
   }
 
   .grid-card {
-    min-height: 320px;
-    padding: var(--spacing-lg);
-
     .content {
-      gap: var(--spacing-sm);
+      gap: clamp(0.75rem, 1.5vw, 1rem);
+      margin-bottom: var(--spacing-md);
 
       .content--title {
-        font-size: 1.6rem;
-        line-height: 2.2rem;
+        font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+        line-height: 1.4;
       }
 
       .content--desc {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
       }
     }
 
     .card-btn {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1vw, 1rem);
     }
   }
 
-  .list-services {
-    padding: 40px 0;
-  }
-
   .cta {
-    padding: 30px var(--spacing-lg);
-    flex-direction: column;
+    padding: clamp(2rem, 3vw, 2.5rem) var(--spacing-lg);
+    flex-direction: row;
     gap: var(--spacing-lg);
-    margin-bottom: 40px;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    align-items: center;
 
     .cta-content {
       gap: 1.2rem;
+      flex: 1;
+      text-align: left;
 
       .cta-content--text {
         max-width: 100%;
@@ -126,56 +167,44 @@
   }
 }
 
-@media (max-width: 480px) {
+/* Desktop (1024px+) */
+@media (min-width: 64rem) {
+  .list-services {
+    padding: 3.75rem 0;
+  }
+
   .grid-services {
-    grid-template-columns: 1fr;
-    row-gap: var(--spacing-sm);
-    column-gap: var(--spacing-sm);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
   .grid-card {
-    min-height: 280px;
-    padding: var(--spacing-md);
-    border: 1px solid var(--verdePetronas);
+    min-height: 415px;
+    padding: 2rem;
 
     .content {
-      gap: var(--spacing-sm);
+      gap: 1rem;
 
       .content--title {
-        font-size: 1.4rem;
-        line-height: 2rem;
+        font-size: 2rem;
       }
 
       .content--desc {
-        font-size: 1.1rem;
-        color: var(--prataSelenita);
-        padding-bottom: 0.5rem;
+        font-size: 1.4rem;
       }
     }
 
     .card-btn {
-      font-size: 0.9rem;
-      padding: 10px 0;
+      font-size: 1.2rem;
     }
-  }
-
-  .list-services {
-    padding: 20px 0;
   }
 
   .cta {
-    padding: 20px var(--spacing-md);
-    flex-direction: column;
-    gap: var(--spacing-md);
-    margin-bottom: 20px;
-
-    .cta-content {
-      gap: 1rem;
-
-      .cta-content--text {
-        max-width: 100%;
-        font-size: 1.2rem;
-      }
-    }
+    padding: 3.125rem 4rem;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    justify-content: space-between;
+    align-items: center;
   }
 }
