@@ -1,6 +1,6 @@
 /*Hero especifica*/
 .hero {
-  background-image: url("/assets/images/heroApointment.jpg");
+  background-image: url("../../images/heroApointment.jpg");
 }
 
 /*Form - Mobile First*/

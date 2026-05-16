@@ -208,7 +208,7 @@ h5 {
   min-height: 50vh;
   background-size: cover;
   background-position: center center;
-  background-image: url("/assets/images/heroHome.png");
+  background-image: url("../images/heroHome.png");
   background-attachment: scroll;
 }
 
