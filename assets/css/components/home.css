@@ -179,19 +179,19 @@
 }
 
 .card1 {
-  background-image: url(/assets/images/cardEletric.png);
+  background-image: url(../../images/cardEletric.png);
 }
 
 .card2 {
-  background-image: url(/assets/images/cardMecanic.png);
+  background-image: url(../../images/cardMecanic.png);
 }
 
 .card3 {
-  background-image: url(/assets/images/cardChapa.jpg);
+  background-image: url(../../images/cardChapa.jpg);
 }
 
 .card4 {
-  background-image: url(/assets/images/cardPintura.jpg);
+  background-image: url(../../images/cardPintura.jpg);
 }
 
 /* Testimonials Section */
