@@ -205,7 +205,7 @@ h5 {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 50vh;
+  min-height: 60vh;
   background-size: cover;
   background-position: center center;
   background-image: url("/assets/images/heroHome.png");

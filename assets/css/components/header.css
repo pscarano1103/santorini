@@ -17,6 +17,10 @@
   gap: var(--spacing-sm);
 }
 
+.logo {
+  margin: auto;
+}
+
 .logo img {
   height: auto;
   width: clamp(80px, 15vw, 150px);
@@ -26,7 +30,7 @@
 
 .nav-links ul {
   list-style: none;
-  display: flex;
+  display: none;
   gap: clamp(0.75rem, 3vw, 2.5rem);
   flex-wrap: wrap;
   align-items: center;
@@ -102,6 +106,69 @@
   .selected {
     color: var(--verdePetronas);
   }
+}
+
+.btn-menu {
+  display: none;
+}
+
+/*Menu Mobile*/
+.btn-abrir-menu {
+  color: var(--text);
+  font-size: 3rem;
+}
+
+.menu-mobile {
+  background-color: var(--background);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  width: 0%;
+  overflow: hidden;
+}
+.menu-mobile .btn-fechar {
+  padding: 2rem 4%;
+  text-align: right;
+}
+
+.menu-mobile .btn-fechar i {
+  color: var(--cianEletrico);
+  font-size: 2rem;
+}
+
+.menu-mobile nav ul {
+  text-align: left;
+  list-style: none;
+}
+
+.menu-mobile nav ul li {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.menu-mobile nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-title);
+  padding: 2rem 8%;
+  display: block;
+  transition: all ease 0.5s;
+  &:hover {
+    background-image: var(--primaryGradient);
+  }
+}
+
+.overlay-menu-mobile {
+  background-color: #000000a9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 790;
+  display: none;
 }
 
 /* Tablet (768px+) */
