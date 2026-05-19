@@ -16,16 +16,17 @@
     <link rel="stylesheet" href="assets/css/global.css" />
     <link rel="stylesheet" href="assets/css/components/header.css" />
     <link rel="stylesheet" href="assets/css/components/home.css" />
+    <script src="assets/js/menu.js" defer></script>
     <title>Santorini — Home</title>
   </head>
   <body>
     <header class="topnav">
       <div class="container nav-container">
-        <div class="btn-abrir-menu">
+        <div class="btn-abrir-menu" id="btn-menu">
           <i class="fa-solid fa-bars"></i>
         </div>
-        <div class="menu-mobile">
-          <div class="btn-fechar">
+        <div class="menu-mobile" id="menu-mobile">
+          <div class="btn-fechar" id="btn-fechar">
             <i class="fa-solid fa-xmark"></i>
           </div>
 
@@ -38,7 +39,7 @@
             </ul>
           </nav>
         </div>
-        <div class="overlay-menu-mobile"></div>
+        <div class="overlay-menu-mobile" id="overlay-menu"></div>
         <!--menu-mobile-->
 
         <a class="logo" href="#">

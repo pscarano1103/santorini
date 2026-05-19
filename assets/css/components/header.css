@@ -127,6 +127,15 @@
   z-index: 800;
   width: 0%;
   overflow: hidden;
+  transition: 0.5s;
+}
+
+.menu-mobile.abrir-menu {
+  width: 60%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu-mobile {
+  display: block;
 }
 .menu-mobile .btn-fechar {
   padding: 2rem 4%;
