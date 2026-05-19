@@ -26,6 +26,7 @@ footer {
     width: clamp(80px, 15vw, 150px);
     height: auto;
     transition: width 0.3s ease;
+    margin-left: 0;
   }
 
   p {
