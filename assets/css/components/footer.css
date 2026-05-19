@@ -75,6 +75,10 @@ footer {
 .content-location {
   font-size: clamp(0.85rem, 1.2vw, 1.4rem);
   line-height: 1.8;
+
+  p {
+    color: var(--text);
+  }
 }
 
 .copy {
