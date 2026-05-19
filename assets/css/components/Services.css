@@ -1,7 +1,7 @@
 /*Hero Especifica*/
 
 .hero {
-  background-image: url("/assets/images/heroService.jpg");
+  background-image: url("../../images/heroService.jpg");
 }
 
 .list-services {
