@@ -184,7 +184,12 @@
     flex-shrink: 0;
   }
 
+  .logo {
+    margin: 0;
+  }
+
   .nav-links ul {
+    display: flex;
     order: 2;
     width: auto;
     margin-top: 0;
@@ -214,6 +219,17 @@
     .language:first-child {
       border-right: 2px solid var(--text);
     }
+  }
+
+  .btn-menu {
+    display: block;
+  }
+
+  /*escondendo menumobile*/
+
+  .btn-abrir-menu,
+  .menu-mobile {
+    display: none;
   }
 }
 

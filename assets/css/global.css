@@ -92,12 +92,12 @@ h6 {
 
 /* Mobile First (320px+) */
 h1 {
-  font-size: clamp(1.8rem, 6vw, 7.2rem);
+  font-size: clamp(1.8rem, 5vw, 7.2rem);
   line-height: 1.1;
 }
 
 h2 {
-  font-size: clamp(1.4rem, 5vw, 4.8rem);
+  font-size: clamp(1.4rem, 4vw, 4.8rem);
   line-height: 1.15;
 }
 
@@ -206,7 +206,7 @@ h5 {
   align-items: center;
   min-height: 60vh;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-image: url("../images/heroHome.png");
   background-attachment: scroll;
 }
@@ -264,8 +264,8 @@ h5 {
 /* Tablet (768px+) */
 @media (min-width: 48rem) {
   .hero {
-    min-height: 60vh;
-    background-attachment: fixed;
+    min-height: 100vh;
+    background-attachment: scroll;
   }
 
   .hero-overlay {
@@ -280,7 +280,7 @@ h5 {
   .hero-content {
     max-width: 600px;
     gap: clamp(1.25rem, 3vw, 1.5rem);
-    padding: 0;
+    margin-top: 5rem;
 
     .buttons {
       flex-direction: row;

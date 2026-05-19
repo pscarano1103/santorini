@@ -2,7 +2,17 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/Apointment.css" />
@@ -11,6 +21,26 @@
   <body>
     <header class="topnav">
       <div class="container nav-container">
+        <div class="btn-abrir-menu">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="menu-mobile">
+          <div class="btn-fechar">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="../../index.html" class="active">Home</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="apointment.html">Book Service</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="overlay-menu-mobile"></div>
+        <!--menu-mobile-->
+
         <a class="logo" href="#">
           <img src="../images/logo_branco.png" alt="Santorini" />
         </a>
@@ -146,7 +176,12 @@
       <div class="container">
         <div class="footer-grid">
           <div class="tag-footer">
-            <img src="/assets/images/logo_branco.png" alt="" class="logo" loading="lazy" />
+            <img
+              src="/assets/images/logo_branco.png"
+              alt=""
+              class="logo"
+              loading="lazy"
+            />
             <p>Your trusted workshop for high-performance maintenance.</p>
           </div>
           <div class="navigation">
